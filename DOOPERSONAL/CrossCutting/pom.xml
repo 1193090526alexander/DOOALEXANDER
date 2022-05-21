@@ -4,18 +4,9 @@
   <artifactId>CrossCutting</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>CrossCutting</name>
-  <description>...</description>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <testSourceDirectory>test</testSourceDirectory>
-    <resources>
-      <resource>
-        <directory>src</directory>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
-      </resource>
-    </resources>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>

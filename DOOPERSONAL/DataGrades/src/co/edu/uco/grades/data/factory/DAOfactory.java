@@ -1,22 +1,28 @@
 package co.edu.uco.grades.data.factory;
 
-import co.edu.uco.grades.data.dao.StudentDAO;
+import java.sql.Connection;
 
-public class DAOfactory {
+import co.edu.uco.grades.data.dao.StudentDAO;
+import co.edu.uco.grades.data.factory.azuresql.AzureSqlDAOFactory;
+
+public abstract class DAOFactory {
 	
-	public static DAOfactory getDAOfactory() {
-		return null;
+	public static DAOFactory getDaoFactory() {
+		return AzureSqlDAOFactory.create();
 	}
 	
-	protected abstract void OpenConnection();
+	protected abstract void openConnection();
 	
-	public abstract void getConnection();
+	protected abstract Connection getConnection();
+	
+	public abstract void initTransaction();
 	
 	public abstract void closeConnection();
 	
-	public abstract void commit();
+	public abstract void rollbackTransaction();
 	
-	public abstract void rollback();
+	public abstract void commitTransaction();
 	
 	public abstract StudentDAO getStudentDAO();
+	
 }

@@ -5,11 +5,8 @@ import co.edu.uco.grades.dto.StudentDTO;
 public interface StudentDAO {
 	
 	void create(StudentDTO student);
-	
-	void update();
-	
-	void delete();
-	
-	void find();
+	void update(StudentDTO student);
+	void delete(int id);
+	void find(StudentDTO student);
 
 }

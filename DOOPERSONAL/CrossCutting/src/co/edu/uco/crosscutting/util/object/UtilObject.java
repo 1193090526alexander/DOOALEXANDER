@@ -11,16 +11,12 @@ public class UtilObject {
 	public static UtilObject getUtilObject() {
 		return INSTANCE;
 	}
-
+	
 	public <T> boolean isNull(T object) {
 		return object == null;
-		
 	}
 	
 	public <T> T getDefault(T object, T defaultValue) {
-		
-		return isNull(object) ? defaultValue : object;
-		
+		return (isNull(object) ? defaultValue : object);
 	}
-
 }
