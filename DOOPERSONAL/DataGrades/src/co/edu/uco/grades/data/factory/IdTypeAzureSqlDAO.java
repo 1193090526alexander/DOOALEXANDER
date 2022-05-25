@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.edu.uco.grades.crosscuting.exception.GradesException;
+import co.uco.grades.crosscuting.exception.GradesException;
 import co.edu.uco.grades.data.dao.IdTypeDAO;
 import co.edu.uco.grades.data.dao.connection.ConnectionSQL;
 import co.edu.uco.grades.dto.IdTypeDTO;
@@ -154,7 +154,7 @@ String sql = "UPDATE FROM Subject WHERE id = ?";
 }
 	
 private List<IdTypeDTO> executeQuery(PreparedStatement preparedStatement){
-	List<SubjectDTO>;
+	List<IdTypeDTO>;
 
 	
 	
@@ -174,6 +174,7 @@ private List<IdTypeDTO> executeQuery(PreparedStatement preparedStatement){
 		throw GradesException.buildTechnicalException("There was an unexpected problem trying to delete a subject registry on sql server", exception);
 		
 	}
+}
 }
 private IdTypeDTO assembleDTO(ResultSet resultSet) throws Exception {
 	

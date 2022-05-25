@@ -25,8 +25,8 @@ private static final Byte ZERO = 0;
 		
 	}
 	
-	public <T extends Number> boolean isGreatherThan(int i,String string) {
-		return getDefault(i).doubleValue() > getDefault(ZERO).doubleValue();
+	public <T extends Number> boolean isGreatherThan(T value,T initialValue) {
+		return getDefault(value).doubleValue() > getDefault(ZERO).doubleValue();
 	}
 	
 	public <T extends Number> boolean isLessThan(T firstValue,T secondValue) {

@@ -1,11 +1,13 @@
-package co.edu.uco.businesslogic.business.impl;
+package co.edu.uco.businesslogic.business;
 
-import co.edu.uco.businesslogic.business.IdTypeBusines;
+import java.util.List;
+
 import co.edu.uco.grades.dto.IdTypeDTO;
+
 public interface IdTypeBusines {
-@Overrride
-public void create(IdTypeDTO dto) {
-	daoFactory
-}
+void create(IdTypeDTO dto);
+void update(IdTypeDTO dto);
+void delete(int id);
+List<IdTypeDTO> find(IdTypeDTO dto);
 }
 	

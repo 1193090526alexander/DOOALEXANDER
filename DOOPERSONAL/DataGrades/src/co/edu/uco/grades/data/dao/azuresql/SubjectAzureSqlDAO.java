@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import co.edu.uco.grades.crosscuting.exception.GradesException;
+import co.uco.grades.crosscuting.exception.GradesException;
 import co.edu.uco.grades.data.dao.SubjectDAO;
 import co.edu.uco.grades.data.dao.connection.ConnectionSQL;
 import co.edu.uco.grades.dto.SubjectDTO;
@@ -173,6 +173,7 @@ private List<SubjectDTO> executeQuery(PreparedStatement preparedStatement){
 		throw GradesException.buildTechnicalException("There was an unexpected problem trying to delete a subject registry on sql server", exception);
 		
 	}
+}
 }
 private SubjectDTO assembleDTO(ResultSet resultSet) throws Exception {
 	

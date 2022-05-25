@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import co.edu.uco.crosscutting.util.sql.UtilConnection;
-import co.edu.uco.grades.crosscuting.exception.GradesException;
-import co.edu.uco.grades.crosscuting.exception.enumeration.ExceptionLocation;
+import co.uco.grades.crosscuting.exception.GradesException;
+import co.uco.grades.crosscuting.exception.enumeration.ExceptionLocation;
 import co.edu.uco.grades.data.dao.StudentDAO;
 import co.edu.uco.grades.data.dao.azuresql.StudentAzureSqlDAO;
 import co.edu.uco.grades.data.factory.DAOFactory;

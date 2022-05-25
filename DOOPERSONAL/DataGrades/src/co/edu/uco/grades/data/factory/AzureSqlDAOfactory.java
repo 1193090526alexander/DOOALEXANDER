@@ -1,13 +1,16 @@
-package co.edu.uco.grades.data.factory.azureaql;
+package co.edu.uco.grades.data.factory.azuresql;
 
 import java.sql.Connection;
 
+import static co.edu.uco.crosscutting.util.object.UtilObject.getUtilObject;
+
+import co.edu.co.crosscutting.util.sql.UtilConnection;
 import co.edu.uco.crosscutting.util.object.UtilObject;
 import co.edu.uco.grades.data.dao.StudentDAO;
-import co.edu.uco.grades.data.factory.DAOfactory;
+import co.edu.uco.grades.data.factory.DAOFactory;
 import co.uco.grades.crosscuting.exception.GradesException;
 
-public  abstract class AzureSqlDAOfactory  extends DAOfactory {
+public  abstract class AzureSqlDAOfactory  extends DAOFactory {
 	
 	private Connection connection;
 	
