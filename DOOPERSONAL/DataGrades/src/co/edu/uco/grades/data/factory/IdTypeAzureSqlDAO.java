@@ -34,11 +34,12 @@ public class IdTypeAzureSqlDAO extends ConnectionSQL implements IdTypeDAO {
 	}
 
 	@Override
-	public void create(IdTypeDTO subject) {
-		String sql = "INSERT INTO Subject(id, name) VALUES(?,?)";
+	public void create(IdTypeDTO idType) {
+		String sql = "INSERT INTO IdType(id, name) VALUES(?,?)";
 		
 		try(PreparedStatement preparedStatement = getConnection().prepareStatement(sql)){
-			preparedStatement.setString(1, subject.getId());
+			preparedStatement.setInt(1, idType.getId());
+			preparedStatement.setString(2, idType.getName());			
 		}catch (SQLException exception){
 			
 			throw GradesException.buildTechnicalException("There was a problem trying to create a new subject registry on sql server", exception);
@@ -52,11 +53,11 @@ public class IdTypeAzureSqlDAO extends ConnectionSQL implements IdTypeDAO {
 	}
 
 	@Override
-	public void update(IdTypeDTO subject) {
+	public void update(IdTypeDTO idType) {
 String sql = "UPDATE FROM Subject WHERE id = ?";
 		
 		try(PreparedStatement preparedStatement = getConnection().prepareStatement(sql)){
-			preparedStatement.setString(1, subject.getId());
+			preparedStatement.setInt(1, idType.getId());
 		}catch (SQLException exception){
 			
 			throw GradesException.buildTechnicalException("There was a problem trying to update a subject registry on sql server", exception);
@@ -71,10 +72,10 @@ String sql = "UPDATE FROM Subject WHERE id = ?";
 
 	@Override
 	public void delete(int id) {
-		String sql = "DELETE FROM Subject WHERE id = ?";
+		String sql = "DELETE FROM IdType WHERE id = ?";
 		
 		try(PreparedStatement preparedStatement = getConnection().prepareStatement(sql)){
-			preparedStatement.setString(1, idType.getId());
+			preparedStatement.setInt(1, idType.getId());
 		}catch (SQLException exception){
 			
 			throw GradesException.buildTechnicalException("There was a problem trying to delete a subject registry on sql server", exception);
@@ -88,7 +89,7 @@ String sql = "UPDATE FROM Subject WHERE id = ?";
 	}
 
 	@Override
-	public List<IdTypeDTO> find(IdTypeDTO subject) {
+	public List<IdTypeDTO> find(IdTypeDTO idType) {
 		
 		boolean setWhere = true;
 		List<Object> parameters = new ArrayList<>();
@@ -96,20 +97,20 @@ String sql = "UPDATE FROM Subject WHERE id = ?";
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append("SELECT id, name").append(EMPTY);
-		sb.append("FROM Subject").append(SPACE);
+		sb.append("FROM IdType").append(SPACE);
 		
-		if(!UtilObject.getUtilObject().isNull(subject)) {
+		if(!UtilObject.getUtilObject().isNull(idType)) {
 			
-			if(UtilNumeric.getUtilNumeric().isGreatherThan(subject.getId(), subject.getName())){
+			if(UtilNumeric.getUtilNumeric().isGreatherThan(idType.getId(), idType.getName())){
 				sb.append("WHERE id= ? ");
 				setWhere = false;
 				
 				
 			}
-			if(!UtilText.isEmpty(subject.getName())){
+			if(!UtilText.isEmpty(idType.getName())){
 				sb.append(setWhere ? "WHERE " : "AND ");
 				sb.append("name = ? ");
-				parameters.add(UtilText.trim(subject.getName()));
+				parameters.add(UtilText.trim(idType.getName()));
 			}
 		}
 		

@@ -19,7 +19,7 @@ public class TeacherDTO {
 		
 	}
 
-	private int getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -27,35 +27,35 @@ public class TeacherDTO {
 		this.id = id;
 	}
 
-	private String getIdNumber() {
+	public String getIdNumber() {
 		return idNumber;
 	}
 
-	private void setIdNumber(String idNumber) {
+	public void setIdNumber(String idNumber) {
 		this.idNumber = idNumber;
 	}
 
-	private IdTypeDTO getIdType() {
+	public IdTypeDTO getIdType() {
 		return idType;
 	}
 
-	private void setIdType(IdTypeDTO idType) {
+	public void setIdType(IdTypeDTO idType) {
 		this.idType = idType;
 	}
 
-	private String getName() {
+	public String getName() {
 		return name;
 	}
 
-	private void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	private String getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	private void setEmail(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 	

@@ -15,22 +15,22 @@ public class SessionDTO {
 		setCourse (course);
 		setDate (date);
 	}
-	private int getId() {
+	public int getId() {
 		return id;
 	}
-	private void setId(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	private SessionDTO getCourse() {
+	public SessionDTO getCourse() {
 		return course;
 	}
-	private void setCourse(SessionDTO course) {
+	public void setCourse(SessionDTO course) {
 		this.course = course;
 	}
-	private Date getDate() {
+	public Date getDate() {
 		return date;
 	}
-	private void setDate(Date date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	

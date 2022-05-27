@@ -3,16 +3,15 @@ package co.edu.uco.grade.businesslogic.business.impl;
 import java.util.List;
 
 import co.edu.uco.crosscutting.util.object.UtilObject;
-import co.edu.uco.grade.businesslogic.business.SubjectBusiness;
-import co.uco.grades.crosscuting.exception.GradesException;
 import co.edu.uco.grades.data.factory.DAOFactory;
-import co.edu.uco.grades.dto.SubjectDTO;
+import co.edu.uco.grades.dto.SessionDTO;
+import co.uco.grades.crosscuting.exception.GradesException;
+import co.edu.uco.businesslogic.business.Sessionbusines;
 
-public class SubjectBusinessImpl implements SubjectBusiness {
-	
+public class SessionBusinessImpl implements Sessionbusines {
 	private DAOFactory daoFactory;
 	
-	public SubjectBusinessImpl() {
+	public SessionBusinessImpl() {
 		if(UtilObject.getUtilObject().isNull(daoFactory)) {
 			throw GradesException.buildTechnicalBusinessLogicException("It's not possible create a SubjectBusinessImpl when DAoFactory is null");
 		}
@@ -20,13 +19,13 @@ public class SubjectBusinessImpl implements SubjectBusiness {
 	}
 
 	@Override
-	public void create(SubjectDTO dto) {
+	public void create(SessionDTO dto) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void update(SubjectDTO dto) {
+	public void update(SessionDTO dto) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -37,12 +36,5 @@ public class SubjectBusinessImpl implements SubjectBusiness {
 		
 	}
 
-	@Override
-	public List<SubjectDTO> find(SubjectDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
-
-

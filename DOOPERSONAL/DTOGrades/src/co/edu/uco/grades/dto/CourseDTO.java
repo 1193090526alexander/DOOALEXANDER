@@ -21,34 +21,34 @@ public class CourseDTO {
 		setInitialDate (initialDate);
 		setFinalDate (finalDate);
 	}
-	private int getId() {
+	public int getId() {
 		return id;
 	}
-	private void setId(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	private SubjectDTO getSubject() {
+	public SubjectDTO getSubject() {
 		return subject;
 	}
-	private void setSubject(SubjectDTO subject) {
+	public void setSubject(SubjectDTO subject) {
 		this.subject = subject;
 	}
-	private TeacherDTO getProfessor() {
+	public TeacherDTO getProfessor() {
 		return professor;
 	}
-	private void setProfessor(TeacherDTO professor) {
+	public void setProfessor(TeacherDTO professor) {
 		this.professor = professor;
 	}
-	private Date getInitialDate() {
+	public Date getInitialDate() {
 		return initialDate;
 	}
-	private void setInitialDate(Date initialDate) {
+	public void setInitialDate(Date initialDate) {
 		this.initialDate = initialDate;
 	}
-	private Date getFinalDate() {
+	public Date getFinalDate() {
 		return finalDate;
 	}
-	private void setFinalDate(Date finalDate) {
+	public void setFinalDate(Date finalDate) {
 		this.finalDate = finalDate;
 	}
 		
