@@ -11,7 +11,7 @@ import co.uco.grades.crosscuting.exception.GradesException;
 
 public class IdTypeFacadeImpl implements IdTypeFacade {
 
-	private DAOFactory daoFactory = DAOFactory.getDaoFactory();
+
 	
 	
 	@Override
@@ -33,8 +33,8 @@ public class IdTypeFacadeImpl implements IdTypeFacade {
 		catch(Exception exception) {
 			daoFactory.rollbackTransaction();
 			//TODO: handle
-			var  message ="There was a problem trying to create the new IdType on create method in IdTypeFacadeImpl";
-			throw GradesException.buildTechnicalBusinessLogicException(null);
+			var  message  ="There was a problem trying to create the new IdType on create method in IdTypeFacadeImpl";
+			throw GradesException.buildTechnicalBusinessLogicException(message);
 		}finally {
 			daoFactory.closeConnection();
 		}
@@ -53,6 +53,7 @@ public class IdTypeFacadeImpl implements IdTypeFacade {
 			//Ejecutar el negocio
 			IdTypeBusines idTypeBusines = new IdTypeBusinessImpl(daoFactory);
 			idTypeBusines.update(dto);
+			
 			daoFactory.commitTransaction();
 		}catch(GradesException exception) {
 			daoFactory.rollbackTransaction();
@@ -63,7 +64,7 @@ public class IdTypeFacadeImpl implements IdTypeFacade {
 			daoFactory.rollbackTransaction();
 			//TODO: handle
 			var  message ="There was a problem trying to update the new IdType on create method in IdTypeFacadeImpl";
-			throw GradesException.buildTechnicalBusinessLogicException(null);
+			throw GradesException.buildTechnicalBusinessLogicException(message);
 		}finally {
 			daoFactory.closeConnection();
 		}
@@ -93,7 +94,7 @@ public class IdTypeFacadeImpl implements IdTypeFacade {
 			daoFactory.rollbackTransaction();
 			//TODO: handle
 			var  message ="There was a problem trying to delete the new IdType on create method in IdTypeFacadeImpl";
-			throw GradesException.buildTechnicalBusinessLogicException(null);
+			throw GradesException.buildTechnicalBusinessLogicException(message);
 		}finally {
 			daoFactory.closeConnection();
 		}
@@ -108,21 +109,21 @@ public class IdTypeFacadeImpl implements IdTypeFacade {
 		DAOFactory daoFactory = DAOFactory.getDaoFactory();
 		
 		try {
-			daoFactory.initTransaction();
+			
 			//Ejecutar el negocio
 			IdTypeBusines idTypeBusines = new IdTypeBusinessImpl(daoFactory);
 			return idTypeBusines.find(dto);
 
 		}catch(GradesException exception) {
-			daoFactory.rollbackTransaction();
+			
 			//TODO: handle
 			throw exception;
 		}
 		catch(Exception exception) {
-			daoFactory.rollbackTransaction();
+
 			//TODO: handle
 			var  message ="There was a problem trying to find the new IdType on create method in IdTypeFacadeImpl";
-			throw GradesException.buildTechnicalBusinessLogicException(null);
+			throw GradesException.buildTechnicalBusinessLogicException(message);
 		}finally {
 			daoFactory.closeConnection();
 		}

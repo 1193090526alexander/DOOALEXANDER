@@ -13,7 +13,8 @@ public class IdTypeBusinessImpl implements IdTypeBusines{
 		
 		private DAOFactory daoFactory;
 		
-		public IdTypeBusinessImpl() {
+		public IdTypeBusinessImpl(DAOFactory daoFactory) {
+			
 			if(UtilObject.getUtilObject().isNull(daoFactory)) {
 				throw GradesException.buildTechnicalException("It's not possible create a SubjectBusinessImpl when DAoFactory is null");
 			}
@@ -21,9 +22,6 @@ public class IdTypeBusinessImpl implements IdTypeBusines{
 			 
 		}
 
-		public IdTypeBusinessImpl(DAOFactory daoFactory2) {
-			// TODO Auto-generated constructor stub
-		}
 
 		@Override
 		public void create(IdTypeDTO dto) {

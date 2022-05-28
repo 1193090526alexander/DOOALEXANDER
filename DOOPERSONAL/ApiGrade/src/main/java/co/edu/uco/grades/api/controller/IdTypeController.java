@@ -70,12 +70,12 @@ public class IdTypeController {
 	
 	@PutMapping("/{id}")
 	public void update(@PathVariable("id") int id,@RequestBody IdTypeDTO dto) {
-		System.out.println("estoy en crear!!");
+		System.out.println("estoy en actualizar!!");
 	}
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable("id") int id) {
-		System.out.println("estoy en crear!!");
+		System.out.println("estoy en Eliminar!!");
 	}
 	
 	@GetMapping
