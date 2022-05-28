@@ -2,7 +2,7 @@ package co.edu.uco.crosscutting.util.text;
 
 import static co.edu.uco.crosscutting.util.object.UtilObject.getUtilObject;
 
-import co.edu.uco.grades.dto.SessionDTO;
+
 
 public class UtilText {
 	
@@ -27,7 +27,7 @@ public class UtilText {
 		return getDefault(value).trim();
 	}
 	
-	public static boolean isEmpty(SessionDTO sessionDTO) {
-		return EMPTY.equals(trim(sessionDTO));
+	public static boolean isEmpty(String value) {
+		return EMPTY.equals(trim(value));
 	}
 }

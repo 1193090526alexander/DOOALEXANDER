@@ -31,7 +31,7 @@ public class IdTypeBusinessImpl implements IdTypeBusines{
 
 		private void validateIdTypeDoesNotExistWithSameName(IdTypeDTO dto) {
 			IdTypeDTO dtoValidator = new IdTypreDTO();
-			dtoValidator.setName(dto, gerName);
+			dtoValidator.setName(dto, getName);
 			
 			List<IdTypeDTO> list = daoFactory.getIdTypeDAO().find(dtoValidator);
 			if(!list.isEmpty()) {

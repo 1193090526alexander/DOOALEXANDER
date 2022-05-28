@@ -3,6 +3,7 @@ package co.edu.uco.grades.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.edu.uco.crosscutting.util.object.UtilObject;
 import co.edu.uco.crosscutting.util.text.UtilText;
 
 public class IdTypeDTO {
@@ -19,19 +20,20 @@ public class IdTypeDTO {
 		return name;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.name = UtilText.getDefault(name);
 	}
 	
-	public List<String> validateName(){
-		List<String> validationMessages = new ArrayList<>();
+	public void validateName(List<String> validationMessages ){
+		 validationMessages = UtilObject.getUtilObject().getDefault(validationMessages, new ArrayList<>());
 		if (UtilText.isEmpty(getName())) {
 			validationMessages.add("Name of id type is required");
 			
-		}else if(UtilText.getDefault(getName()).lenght()>50) {
-			validationMessages.add(" Lenhgt of name of id type must be less o equalsto 50 caracters");
-		}else if(!UtilText.getDefault(getName()).matches()>50) {
-			validationMessages.add(" Name of id type is contains invalide ");
+		}else if(UtilText.getDefault(getName()).length() >50 ) {
+			validationMessages.add(" Lenhgt of name of id type must be less o equalsto 50 characters!!");
+		}else if(!UtilText.getDefault(getName()).matches("^[a-zA-ZÒ—·¡È…ÌÕÛ”˙⁄]*$")) {
+			validationMessages.add(" Name of id type is contains invalide  characters!!");
 		}
+		
 	}
 
 }
