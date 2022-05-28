@@ -1,6 +1,6 @@
 package co.edu.uco.grade.businesslogic.business.impl;
 
-import java.util.List;
+
 
 import co.edu.uco.crosscutting.util.object.UtilObject;
 import co.edu.uco.grades.data.factory.DAOFactory;
@@ -32,6 +32,12 @@ public class SessionBusinessImpl implements Sessionbusines {
 
 	@Override
 	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void find(SessionDTO session) {
 		// TODO Auto-generated method stub
 		
 	}

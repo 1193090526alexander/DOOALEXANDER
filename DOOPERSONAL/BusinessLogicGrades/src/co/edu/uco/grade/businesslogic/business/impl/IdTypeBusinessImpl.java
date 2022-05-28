@@ -17,15 +17,30 @@ public class IdTypeBusinessImpl implements IdTypeBusines{
 			if(UtilObject.getUtilObject().isNull(daoFactory)) {
 				throw GradesException.buildTechnicalException("It's not possible create a SubjectBusinessImpl when DAoFactory is null");
 			}
+			this.daoFactory	= daoFactory;
 			 
+		}
+
+		public IdTypeBusinessImpl(DAOFactory daoFactory2) {
+			// TODO Auto-generated constructor stub
 		}
 
 		@Override
 		public void create(IdTypeDTO dto) {
-			// TODO Auto-generated method stub
-			
+			validateIdTypeDoesNotExistWithSameName( dto);
+			daoFactory.getIdTypeDAO().create(dto);
 		}
 
+		private void validateIdTypeDoesNotExistWithSameName(IdTypeDTO dto) {
+			IdTypeDTO dtoValidator = new IdTypreDTO();
+			dtoValidator.setName(dto, gerName);
+			
+			List<IdTypeDTO> list = daoFactory.getIdTypeDAO().find(dtoValidator);
+			if(!list.isEmpty()) {
+				var message = "An Id Type with  the same name alredy  exist";
+				//Generate BussinessEcxeption
+			}
+		}
 		@Override
 		public void update(IdTypeDTO dto) {
 			// TODO Auto-generated method stub

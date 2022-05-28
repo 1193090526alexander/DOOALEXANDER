@@ -34,11 +34,11 @@ public class TeacherAzureSqlDAO extends ConnectionSQL implements TeacherDAO {
 			preparedStatement.setString(2, teacher.getEmail());
 		}catch (SQLException exception){
 			
-			throw GradesException.buildTechnicalDataException("There was a problem trying to create a new studend registry on sql server", exception);
+			throw GradesException.buildTechnicalDataException("There was a problem trying to create a new studend registry on sql server", exception, null);
 			
 		}catch (Exception exception) {
 			
-			throw GradesException.buildTechnicalDataException("There was an unexpected problem trying to create a new studend registry on sql server", exception);
+			throw GradesException.buildTechnicalDataException("There was an unexpected problem trying to create a new studend registry on sql server", exception, null);
 			
 		}
 		

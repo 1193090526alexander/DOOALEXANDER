@@ -33,4 +33,10 @@ public class TeacherBusinessImpl implements TeacherBusines {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void find(TeacherDTO dto) {
+		// TODO Auto-generated method stub
+		
+	}
 }

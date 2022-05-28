@@ -141,7 +141,7 @@ public void delete(int id) {
 	
 }
 @Override
-public void find(SessionDTO session) {
+public  void find(SubjectDTO subject) {
 	// TODO Auto-generated method stub
 	
 }

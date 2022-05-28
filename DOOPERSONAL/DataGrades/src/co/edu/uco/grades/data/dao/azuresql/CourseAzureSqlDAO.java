@@ -28,9 +28,9 @@ public class CourseAzureSqlDAO  extends ConnectionSQL implements CourseDAO {
 		
 		try(PreparedStatement preparedStatement = getConnection().prepareStatement(sql)){
 			preparedStatement.setObject(1, course.getSubject());
-			preparedStatement.setTeacherDTO(2, course.getProfessor());
+			preparedStatement.setProfessor(2, course.getProfessor());
 			preparedStatement.setDate(3, course.getInitialDate());
-			preparedStatement.setDate(3, course.getFinalDate());
+			preparedStatement.setDate(4, course.getFinalDate());
 		}catch (SQLException exception){
 			
 			throw GradesException.buildTechnicalDataException("There was a problem trying to create a new studend registry on sql server", exception, null);

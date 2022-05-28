@@ -28,7 +28,7 @@ public class StudentAzureSqlDAO extends ConnectionSQL implements StudentDAO {
 			preparedStatement.setInt(2, student.getIdType().getId());
 		}catch (SQLException exception){
 			
-			throw GradesException.buildTechnicalDataException("There was a problem trying to create a new studend registry on sql server", exception);
+			throw GradesException.buildTechnicalDataException("There was a problem trying to create a new studend registry on sql server", exception, null);
 			
 		}catch (Exception exception) {
 			

@@ -35,16 +35,16 @@ public class GradesException extends GeneralException {
             Exception rootException) {
         return new GradesException(userMessage, technicalMessage, null, null, null);
     }
-    private ExceptionType getType() {
+    public ExceptionType getType() {
         return type;
     }
-    private void setType(ExceptionType type) {
+    public void setType(ExceptionType type) {
         this.type = getUtilObject().getDefault(type, ExceptionType.GENERAL);
     }
-    private ExceptionLocation getLocation() {
+    public ExceptionLocation getLocation() {
         return location;
     }
-    private void setLocation(ExceptionLocation location) {
+    public void setLocation(ExceptionLocation location) {
         this.location = getUtilObject().getDefault(location, ExceptionLocation.GENERAL);
     }
     public static Exception buildTechnicalException(String string, Exception exception) {

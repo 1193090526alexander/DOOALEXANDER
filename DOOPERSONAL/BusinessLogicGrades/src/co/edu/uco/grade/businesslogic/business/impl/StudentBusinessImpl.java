@@ -32,4 +32,10 @@ public class StudentBusinessImpl implements StudentBusines{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void find(StudentDTO student) {
+		// TODO Auto-generated method stub
+		
+	}
 }
