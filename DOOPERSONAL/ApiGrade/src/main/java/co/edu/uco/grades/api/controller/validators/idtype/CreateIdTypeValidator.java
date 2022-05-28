@@ -16,7 +16,7 @@ public class CreateIdTypeValidator implements  validator<IdTypeDTO> {
 		if(UtilObject.getUtilObject().isNull(dto)) {
 			validationMessages.add("It´s not possible validate Id Type dat");
 		}
-		dto.validateName(validationMessages);
+		dto.validateName(validationMessages);      
 		return validationMessages;
 	}
 	

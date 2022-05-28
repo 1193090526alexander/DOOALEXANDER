@@ -39,7 +39,7 @@ public class IdTypeController {
 		
 		validator<IdTypeDTO> validator = new CreateIdTypeValidator();
 		List<String> messages =UtilObject.getUtilObject().getDefault(validator.validate(dto), new ArrayList<>());
-		Response<IdTypeDTO> response = new Response<>();
+		Response<IdTypeDTO> response = new Response<>(); 
 		ResponseEntity<Response<IdTypeDTO>> resposeEntity;
 		HttpStatus statusCode = HttpStatus.BAD_REQUEST;
 
@@ -90,8 +90,44 @@ public class IdTypeController {
 		System.out.println("estoy en consultar todos!!");
 	}
 	@GetMapping
-	public void find() {
-		System.out.println("estoy en consultar todos!!");
+	public ResponseEntity<Response<IdTypeDTO>> find() {
+		
+		validator<IdTypeDTO> validator = new CreateIdTypeValidator();
+		List<String> messages =UtilObject.getUtilObject().getDefault(validator.validate(dto), new ArrayList<>());
+		Response<IdTypeDTO> response = new Response<>(); 
+		ResponseEntity<Response<IdTypeDTO>> resposeEntity;
+		HttpStatus statusCode = HttpStatus.BAD_REQUEST;
+
+		
+			try {
+				IdTypeFacade facade = new IdTypeFacadeImpl();
+				response.setData(facade.find(new IdTypeDTO()));
+				messages.add("Id type were  found succesfully!");
+				statusCode= HttpStatus.OK;
+			}catch(GradesException exception) {
+				if(ExceptionType.TECHNICAL.equals(exception.getType())) {
+					messages.add("These was a problem trying  to find   id types.  Please, try again...");
+					System.err.println(exception.getLocation());
+					System.err.println(exception.getType());
+					System.err.println(exception.getMessage());
+                    exception.getRootException().printStackTrace();
+				}else {
+					messages.add(exception.getUserMessage());
+					System.err.println(exception.getLocation());
+					System.err.println(exception.getType());
+					System.err.println(exception.getMessage());
+					exception.getRootException().printStackTrace();
+				}
+				
+			}catch (Exception exception) {
+				messages.add("These was a problem trying  tofind  id type. Pleases, try again...");
+				exception.printStackTrace();
+				
+			
+		}
+		 response.setMessages(messages);
+		 ResponseEntity responseEntity = new ResponseEntity<>(response, statusCode);
+		return responseEntity;
 	}
 
 }
